@@ -1,20 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"golang3/search"
+)
 
-func main(){
-	name := []string{"fiki", "yoga", "anggi", "itsna", "federus", "ari", "sidik"}
-	var keywoord string
-	found := false
-	fmt.Println("masukkan nama ")
-	fmt.Scan(&keywoord)
-	for i := range name{
-		if keywoord == name[i]{
-			found = true
-			fmt.Println("nama ditemukan: ", keywoord)
-		}
-	}
-	if !found {
-		fmt.Println("nama tidak ditemukan: ", keywoord)
-	}
+
+func main() {
+	names := []string{"fiki", "yoga", "anggi", "itsna", "federus", "ari", "sidik"}
+	var keyword string
+	fmt.Print("Masukkan nama: ")
+	fmt.Scan(&keyword)
+
+	search.SearchPerson(names, keyword)
 }
