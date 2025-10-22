@@ -23,5 +23,5 @@ func main() {
 	keyword, _ := reader.ReadString('\n') 
 	keyword = strings.TrimSpace(keyword)  
 
-	search.SearchPerson(names, keyword)
+	search.SearchPerson(names, &keyword)
 }
