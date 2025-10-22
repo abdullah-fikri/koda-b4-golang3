@@ -7,8 +7,15 @@ import (
 )
 
 func SearchPerson(names []string, keyword *string)[]string {
+		defer func() {
+		if r := recover(); r != nil {
+			fmt.Println(r)
+			os.Exit(1)
+		}
+	}()
+
 	if strings.TrimSpace(*keyword) == "" {
-		panic("input kosong!")
+		panic("input empty!")
 	}
 
 	found := false
